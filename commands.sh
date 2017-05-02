@@ -6,3 +6,4 @@ tcpdump -A -v -C 300 -W 600 -w "/mnt/logDepot/jmf-logs/capture_5-226-4-DST" dst 
 
 # Rsync Dry RUN :
 rsync --dry-run -ruvpz --log-file /var/log/rsyncDry.log root@server.domain.dc:/var/www/      /var/www/
+
