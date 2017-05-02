@@ -10,3 +10,6 @@ rsync --dry-run -ruvpz --log-file /var/log/rsyncDry.log root@server.domain.dc:/v
 # Users and groups editing tools :
 vipw
 vigr
+
+# Pattern replacement :
+find . -type f -name "*baz*" -exec sed -i 's/foo/bar/g' {} +
