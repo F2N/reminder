@@ -1,3 +1,10 @@
+#############################################
+################ Syscommands ################
+#############################################
+
+# Find Dell Express tag from windows CMD :
+wmic bios get serialnumber
+
 # Find Nagios check results from database :
 SELECT * FROM `nagios_servicechecks` WHERE `service_object_id` = 480 AND `start_time` LIKE '%2017-04-22 00:0%' ORDER BY `start_time` DESC
 
