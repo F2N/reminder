@@ -4,6 +4,9 @@
 
 # Rsync Dry RUN :
 rsync --dry-run -ruvpz --log-file /var/log/rsyncDry.log root@server.domain.dc:/var/www/      /var/www/
+rsync --dry-run -ruvvapzt --exclude '/var/www/.htaccess' --log-file /var/log/rsyncDATE root@server01.domain.dc:/var/www/ /var/www/ | tee /mnt/logDepot/rsyncDATE
+
+
 
 # TcpDump on FreeBSD :
 tcpdump -A -v -C 300 -W 600 -w "/mnt/logDepot/jmf-logs/capture_5-226-4-DST" dst 5.226.4.XXX or dst 5.226.4.XXX or dst 5.226.4.XXX
