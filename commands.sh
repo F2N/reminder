@@ -7,7 +7,6 @@ git clone -b v1.4.0 https://github.com/sysown/proxysql.git proxysql
 gmake
 mv proxysql/src/proxysql /usr/local/bin
 
-
 # Rsync Dry RUN :
 rsync --dry-run -ruvpz --log-file /var/log/rsyncDry.log root@server.domain.dc:/var/www/      /var/www/
 rsync --dry-run -ruvvapzt --exclude '/var/www/.htaccess' --log-file /var/log/rsyncDATE root@server01.domain.dc:/var/www/ /var/www/ | tee /mnt/logDepot/rsyncDATE
