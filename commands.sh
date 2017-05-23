@@ -29,6 +29,18 @@ grep -rl 192.168.1.XXX ~/folder/ | xargs sed -i '.bak' s@192.168.1.XXX@domain.fq
 vipw
 vigr
 
+# Forbidden RDP to Administrateur/Administrator :
+# https://serverfault.com/questions/598278/how-to-disable-rdp-access-for-administrator
+
+To deny a user or a group logon via RDP, explicitly set the "Deny logon through Remote Desktop Services" privilege. To do this access a group policy editor (either local to the server or from a OU) and set this privilege:
+
+1. Start | Run | Gpedit.msc if editing the local policy or chose the appropriate policy and edit it.
+2. Computer Configuration | Windows Settings | Security Settings | Local Policies | User Rights Assignment.
+3. Find and double click "Deny logon through Remote Desktop Services"
+4. Add the user and / or the group that you would like to dny access.
+5. Click ok.
+6. Either run gpupdate /force /target:computer or wait for the next policy refresh for this setting to take effect.
+
 # NFS mount (FreeBSD) :
 mount 192.168.1.XXX:/logDepot                /mnt/logDepot
 
