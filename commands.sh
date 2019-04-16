@@ -46,3 +46,6 @@ mount 192.168.1.XXX:/logDepot                /mnt/logDepot
 
 # Find Nagios check results from database :
 SELECT * FROM `nagios_servicechecks` WHERE `service_object_id` = 480 AND `start_time` LIKE '%2017-04-22 00:0%' ORDER BY `start_time` DESC
+
+# Accelerating youtube-dl downloads (must be set in .cshrc)
+alias youtube-dl        'youtube-dl -i --external-downloader aria2c --external-downloader-args "-x 16 -s 16 -k 1M"'
